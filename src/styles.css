@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-=======
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .my-form{
@@ -13,4 +11,4 @@
   .full-width {
     width: 100%;
   }
->>>>>>> e6c054000291b6b9cecfae1c26660564ec7ccb8f
+
