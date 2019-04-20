@@ -1,0 +1,53 @@
+<div style="display:inline-flex">
+  <div>
+    <h4>Please select the Skill Set</h4>
+  </div>
+  <div style="margin-left:40px">
+    <mat-form-field>
+      <mat-label>Select skill</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let skill of skills" (click)="getFilteredEmployees($event.target.innerHTML)" [value]="skill.value">
+          {{skill.Skill}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef> SI No. </th>
+      <td mat-cell *matCellDef="let candidate"> {{candidate.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td style="cursor:pointer" mat-cell *matCellDef="let candidate" (click)="openEmployeeDialog($event)">{{candidate.name}}</td>
+    </ng-container>
+  
+    <!-- Probability Column -->
+    <ng-container matColumnDef="Probabaility">
+      <th mat-header-cell *matHeaderCellDef> Probability </th>
+      <td mat-cell *matCellDef="let candidate"> {{candidate.probability}} </td>
+    </ng-container>
+  
+    <!-- Designation Column -->
+    <ng-container matColumnDef="Designation">
+      <th mat-header-cell *matHeaderCellDef> Designation </th>
+      <td mat-cell *matCellDef="let candidate"> {{candidate.designation}} </td>
+    </ng-container>
+  
+    <!-- Skills Column -->
+    <ng-container matColumnDef="Skills">
+      <th mat-header-cell *matHeaderCellDef> Skills </th>
+      <td mat-cell *matCellDef="let candidate"> {{candidate.skills}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
