@@ -1,4 +1,12 @@
-<div>
-  <a routerLink="/hr">Admin Page</a>
-</div>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <!--  <span>HOME</span> -->
+       <span><a  mat-button  routerLink="/login">Home</a></span>
+       <span class="spacer"></span>
+       <div style="float:right;">
+       <a  mat-button  routerLink="/signup">SignUp</a>
+       <a  mat-button  routerLink="/login">Login</a>
+       </div>
+    </mat-toolbar-row>
+ </mat-toolbar>
+ <router-outlet></router-outlet>

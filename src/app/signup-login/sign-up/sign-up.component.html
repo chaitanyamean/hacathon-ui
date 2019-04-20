@@ -1,0 +1,46 @@
+<mat-toolbar style="background-color: white !important;">
+    <span class="my-card">SignUp</span>
+  </mat-toolbar>
+  <mat-card class="my-card">
+     <mat-card-content>
+        <form class="my-form">  
+           <mat-form-field class="full-width">
+              <mat-label>First Name</mat-label>
+              <input  matInput  placeholder="First name"  name="fname" [(ngModel)]='firstName' required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Last Name</mat-label>
+              <input  matInput  placeholder="Last Name" name="lname" [(ngModel)]='lastName'>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Email</mat-label>
+              <input  matInput  placeholder="Email" name="email" [(ngModel)]='signUpDetails.email' required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Phone</mat-label>
+              <input  matInput  placeholder="Phone" name="phone" [(ngModel)]='signUpDetails.mobileNumber' required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input  matInput  placeholder="Password"  name="password" [(ngModel)]='signUpDetails.password' required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Confirm Password</mat-label>
+              <input  matInput  placeholder="Confirm Password"  name="confirm-password" [(ngModel)]='confirmPassword'>
+           </mat-form-field>
+           <section class="example-section">
+             <br>
+              <label class="full-width" style="font-weight:bold;">Who Am I?</label>
+              <br>
+              <br>
+              <mat-radio-group>
+                 <span class="gender-margin"><mat-radio-button  [checked]="!signUpDetails.isUser" value="false">Employer</mat-radio-button></span>
+                 <span class="gender-margin"><mat-radio-button [checked]="signUpDetails.isUser" value="true">Employee</mat-radio-button></span>
+              </mat-radio-group>
+           </section>
+        </form>
+     </mat-card-content>
+     <mat-card-actions>
+        <button mat-raised-button (click)="signUp()" color="primary">SIGNUP</button>
+     </mat-card-actions>
+  </mat-card>
