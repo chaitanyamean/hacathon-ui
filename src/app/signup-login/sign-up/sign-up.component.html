@@ -1,0 +1,46 @@
+<mat-toolbar style="background-color: white !important;">
+    <span class="my-card">SignUp</span>
+  </mat-toolbar>
+  <mat-card class="my-card">
+     <mat-card-content>
+        <form class="my-form">  
+           <mat-form-field class="full-width">
+              <mat-label>First Name</mat-label>
+              <input  matInput  placeholder="First name"  name="fname"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Last Name</mat-label>
+              <input  matInput  placeholder="Last Name" name="lname">
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Email</mat-label>
+              <input  matInput  placeholder="Email" name="email" required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Phone</mat-label>
+              <input  matInput  placeholder="Phone" name="phone"  required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input  matInput  placeholder="Password"  name="password" required>
+           </mat-form-field>
+           <mat-form-field class="full-width">
+              <mat-label>Confirm Password</mat-label>
+              <input  matInput  placeholder="Confirm Password"  name="comfirm-password">
+           </mat-form-field>
+           <section class="example-section">
+             <br>
+              <label class="full-width" style="font-weight:bold;">Who Am I?</label>
+              <br>
+              <br>
+              <mat-radio-group>
+                 <span class="gender-margin"><mat-radio-button  value="after">Employer</mat-radio-button></span>
+                 <span class="gender-margin"><mat-radio-button  value="before">Employee</mat-radio-button></span>
+              </mat-radio-group>
+           </section>
+        </form>
+     </mat-card-content>
+     <mat-card-actions>
+        <button mat-raised-button (click)="register()" color="primary">SIGNUP</button>
+     </mat-card-actions>
+  </mat-card>
