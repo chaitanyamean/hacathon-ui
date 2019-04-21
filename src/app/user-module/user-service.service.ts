@@ -8,6 +8,8 @@ export class UserServiceService {
   url = 'https://blooming-escarpment-58887.herokuapp.com';
   private getAllTagsApi = 'https://blooming-escarpment-58887.herokuapp.com/common/getAllTags';
   private setUserDetailsApi = 'https://blooming-escarpment-58887.herokuapp.com/employee/emp-details';
+  private getQuestionsApi = "https://blooming-escarpment-58887.herokuapp.com/common/get-questions/";
+  private setUserScoreApi = "https://blooming-escarpment-58887.herokuapp.com/common/save-score";
   httpHeaders = new HttpHeaders();
   httpOptions: any;
   authToken: string;
@@ -52,6 +54,17 @@ export class UserServiceService {
   return response;
  }
 
+ public getQuestions(userId){
+   let response =
+   this.httpClient.get(this.getQuestionsApi + userId, this.httpOptions);
+   return response;
+ }
+
+ public setUserScore(userScore){
+  let response =
+  this.httpClient.post(this.setUserScoreApi, userScore, this.httpOptions);
+  return response;
+}
 
 
 }

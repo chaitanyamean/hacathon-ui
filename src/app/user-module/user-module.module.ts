@@ -5,8 +5,9 @@ import { UserDataComponent } from './user-data/user-data.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatAutocompleteModule, MatRadioModule, MatCardModule,
-  MatButtonModule, MatFormFieldModule,MatSelectModule,MatInputModule} from  '@angular/material';
+  MatButtonModule, MatFormFieldModule,MatSelectModule,MatToolbarModule,MatInputModule} from  '@angular/material';
  import { UserServiceService } from './user-service.service';
+import { UserExamComponent } from './user-exam/user-exam.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 
@@ -24,6 +25,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    MatToolbarModule,
     MatCardModule,
     MatRadioModule,
     MatButtonModule,
@@ -32,7 +34,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     RouterModule.forChild(routes)
   ],
   exports: [UserDataComponent],
-  declarations: [UserDataComponent, UserDashboardComponent],
+  declarations: [UserDataComponent, UserDashboardComponent,UserExamComponent],
   providers: [UserServiceService]
 
 })

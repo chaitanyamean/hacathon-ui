@@ -1,28 +1,101 @@
-<p>
-  user-dashboard works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+    <span>
+      <a mat-button routerLink="/user-dashboard">Home</a>
+    </span>
+    <span class="spacer"></span>
+    <div style="float:right;">
+      <!-- <span>
+          <a mat-button routerLink="/signup">SignUp</a>
+        </span> -->
+      <span>
+        <a mat-button routerLink="/signup">Carrerr Guidance</a>
+      </span>
+      <span>
+        <a mat-button routerLink="/signup">Mock Interviews</a>
+      </span>
+      <!-- <span>
+              <a mat-button routerLink="/signup">SignUp</a>
+            </span> -->
+
+      <span>
+        <a mat-button routerLink="/login">Logout</a>
+      </span>
+    </div>
+    <div style="float:right;">
+      <span>
+        <!-- <a mat-button>Welcome {{userName}}</a> -->
+      </span>
+
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile>
-        <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Shiba Inu</mat-card-title>
-              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="../../../assets/pic2.png" alt="Photo of a Shiba Inu">
-
-          </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <!-- <h3>Be on spot light</h3> -->
+  <mat-grid-tile>
+    <mat-card class="example-card">
       <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title class="know-class">Know Where You Stand</mat-card-title>
-          <mat-card-subtitle class="sub-class">Participate in the exam and be on HR rader </mat-card-subtitle>
-        </mat-card-header>
-     <h3> </h3><br>
-    </mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-  </mat-grid-list>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <!-- <mat-card-title>Shiba Inu</mat-card-title> -->
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/pic2.png" alt="Photo of a Shiba Inu">
+
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <!-- <h3>Be on spot light</h3> -->
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title class="know-class">Know Where You Stand</mat-card-title>
+      <mat-card-subtitle class="sub-class">Participate in the exam and be on HR rader </mat-card-subtitle>
+      <br>
+      <mat-card-actions>
+        <button mat-flat-button color="accent" (click)="onClickFill()">Fill Details</button>
+      </mat-card-actions>
+    </mat-card-header>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title class="know-class">Let HR Search you</mat-card-title>
+      <mat-card-subtitle class="sub-class">Update your skill set </mat-card-subtitle>
+    </mat-card-header>
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+    <mat-card class="example-card">
+      <mat-card-header>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/pic5.png" alt="Photo of a Shiba Inu">
+
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<mat-grid-list cols="3" rowHeight="2:1" *ngIf="detailsRes?.data.skillSet">
+  <h3 style="text-align: center">Your Desired Skill</h3>
+  <p style="text-align: center">Please select any skill and write an exam it wont take much time</p>
+  <mat-grid-tile *ngFor="let item of detailsRes?.data.skillSet">
+    <mat-card class="example-card">
+      <mat-card-header class="mat-class">
+        <mat-card-title>{{item.tags}}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-subtitle></mat-card-subtitle>
+
+      </mat-card-header>
+      <mat-card-actions class="btn-class">
+        <button mat-raised-button color="accent">Take Exam</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+
+<div id="chartContainer" style="width: 100%; height: 400px;"></div>
