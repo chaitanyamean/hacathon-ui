@@ -152,8 +152,7 @@ export class EmployeeDetailsDialog {
 
   constructor(
     public dialogRef: MatDialogRef<EmployeeDetailsDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: CandidateDetails,
-    @Inject(MAT_DIALOG_DATA) public bar) {}
+    @Inject(MAT_DIALOG_DATA) public data: CandidateDetails) {}
 
   onNoClick(): void {
     this.dialogRef.close();
