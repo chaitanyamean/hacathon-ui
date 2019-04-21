@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material'
 import { MatSelectModule } from '@angular/material/select';
-import { ChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -37,10 +37,8 @@ const routes: Routes = [
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
-    MatCheckboxModule,
-    ChartsModule,
-    MatProgressSpinnerModule
-  ],
+    MatCheckboxModule
+],
   declarations: [
     HrComponent,
     CandidateScoreBarComponent,
