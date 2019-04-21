@@ -1,12 +1,27 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <!--  <span>HOME</span> -->
-       <span><a  mat-button  routerLink="/login">Home</a></span>
-       <span class="spacer"></span>
-       <div style="float:right;">
-       <a  mat-button  routerLink="/signup">SignUp</a>
-       <a  mat-button  routerLink="/login">Login</a>
-       </div>
-    </mat-toolbar-row>
- </mat-toolbar>
- <router-outlet></router-outlet>
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+    <span *ngIf="isloggedin">
+      <a mat-button routerLink="/">Home</a>
+    </span>
+    <span class="spacer"></span>
+    <div *ngIf="!isloggedin" style="float:right;">
+      <span>
+        <a mat-button routerLink="/signup">SignUp</a>
+      </span>
+      <span>
+        <a mat-button routerLink="/login">Login</a>
+      </span>
+    </div>
+    <div *ngIf="isloggedin" style="float:right;">
+      <span>
+        <a mat-button>Welcome {{userName}}</a>
+      </span>
+      <span>
+        <a mat-button routerLink="/login">logout</a>
+      </span>
+
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

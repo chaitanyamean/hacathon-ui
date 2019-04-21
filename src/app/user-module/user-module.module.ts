@@ -6,6 +6,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatAutocompleteModule, MatRadioModule, MatCardModule, MatButtonModule, MatFormFieldModule,MatSelectModule,MatInputModule} from  '@angular/material';
  import { UserServiceService } from './user-service.service';
+import { UserExamComponent } from './user-exam/user-exam.component';
 
 
 
@@ -23,11 +24,12 @@ import {MatAutocompleteModule, MatRadioModule, MatCardModule, MatButtonModule, M
     MatButtonModule,
     NgMultiSelectDropDownModule.forRoot(),
     RouterModule.forChild([
-      {path: 'employeeHome', component: UserDataComponent}
+      {path: 'employeeHome', component: UserDataComponent},
+      {path: 'quiz', component: UserExamComponent}
     ])
   ],
   exports: [UserDataComponent],
-  declarations: [UserDataComponent],
+  declarations: [UserDataComponent, UserExamComponent],
   providers: [UserServiceService]
   
 })
