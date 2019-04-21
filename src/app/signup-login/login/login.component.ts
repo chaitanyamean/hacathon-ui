@@ -38,10 +38,15 @@ export class LoginComponent implements OnInit {
           window.alert("login successfull");
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(resObj));
+          localStorage.setItem('token', resObj.token);
         }
-
-          this.router.navigate([this.returnUrl]);
-          return data;
+          if(!resObj.result.isUser) {
+            this.router.navigate(['/hr']);
+          }
+          else {
+            this.router.navigate([this.returnUrl]);
+            return data;
+          }
         },
         error => {
           window.alert(error);
