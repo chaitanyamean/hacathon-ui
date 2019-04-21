@@ -35,11 +35,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     RouterModule.forChild(routes)
   ],
   exports: [UserDataComponent],
-<<<<<<< HEAD
   declarations: [UserDataComponent, UserDashboardComponent, UserExamComponent],
-=======
-  declarations: [UserDataComponent,UserDashboardComponent, UserExamComponent],
->>>>>>> dd12d9b1a4c9a2cce5f2eee935940ca654542f9f
   providers: [UserServiceService]
 
 })

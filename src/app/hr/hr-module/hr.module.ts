@@ -10,7 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HrRoutingModule } from './hr-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './employee.service';
 import { CandidateScoreBarComponent } from '../candidate-score-bar/candidate-score-bar.component';
@@ -34,6 +34,7 @@ const routes: Routes = [
     HttpClientModule,
     MatSelectModule,
     MatTableModule,
+    MatToolbarModule,
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
