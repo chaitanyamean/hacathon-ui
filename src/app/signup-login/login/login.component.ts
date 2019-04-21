@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', resObj.token);
         }
           if(!resObj.result.isUser) {
-            this.router.navigate(['/hr']);
+            this.router.navigate(['/Candidates']);
           }
           else {
             this.router.navigate([this.returnUrl]);

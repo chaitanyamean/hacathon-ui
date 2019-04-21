@@ -1,0 +1,17 @@
+.center {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+}
+
+.details {
+    margin-left: 70px;
+    width: 350px;
+}
+
+.text {
+    margin-left: 300px;
+}
+.example-h2 {
+    margin: 10px;
+}

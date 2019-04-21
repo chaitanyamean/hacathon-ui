@@ -6,7 +6,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
-import { HrComponent, EmployeeDetailsDialog } from './hr.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HrRoutingModule } from './hr-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -14,9 +13,15 @@ import { MatInputModule } from '@angular/material';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './employee.service';
+import { CandidateScoreBarComponent } from '../candidate-score-bar/candidate-score-bar.component';
+import { HrComponent } from '../hr-dashboard/hr-dashboard.component';
+import { CandidateDetailsComponent } from '../candidate-details/candidate-details.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 const routes: Routes = [
-  { path: 'hr', component: HrComponent }
+  { path: 'Candidates', component: HrComponent},
+  { path: 'employeeDetails/:id/:name', component: CandidateDetailsComponent }
 ]
 
 @NgModule({
@@ -33,14 +38,13 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
-    ChartsModule
+    ChartsModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     HrComponent,
-    EmployeeDetailsDialog
-  ],
-  entryComponents: [
-    EmployeeDetailsDialog
+    CandidateScoreBarComponent,
+    CandidateDetailsComponent
   ],
   providers: [EmployeeService,
     { provide: MAT_DIALOG_DATA, useValue: {} },

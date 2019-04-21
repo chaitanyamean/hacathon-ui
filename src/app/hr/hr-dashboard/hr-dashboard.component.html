@@ -1,19 +1,3 @@
-<!-- <div style="display:inline-flex">
-  <div>
-    <h4>Please select the Skill Set</h4>
-  </div>
-  <div style="margin-left:40px">
-    <mat-form-field>
-      <mat-label>Select skill</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let skill of skills" (click)="getFilteredEmployees($event.target.innerHTML)" [value]="skill.value">
-          {{skill.Skill}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-</div> -->
-
 <div>
   <table mat-table [dataSource]="candidates" class="mat-elevation-z8">
 
@@ -37,13 +21,10 @@
 
     <ng-container matColumnDef="Details">
       <th mat-header-cell *matHeaderCellDef> Details </th>
-      <td mat-cell *matCellDef="let candidate; let i = index" style="cursor: pointer;color: blue" (click)="openEmployeeDialog(i)">Candidate Details</td>
+      <td mat-cell *matCellDef="let candidate; let i = index" style="cursor:pointer;color: blue" (click)="openEmployeeDetails(i)"><a [routerLink]="['/employeeDetails', candidate.id, candidate.name]"></a>Candidate Details</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
-
-
-<div id="chartContainer" style="width: 100%; height: 400px;"></div>

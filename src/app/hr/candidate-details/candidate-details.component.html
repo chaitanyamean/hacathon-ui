@@ -1,0 +1,58 @@
+<div class="center">
+  <div>
+    <h1 style="text-align:center;font-size:40px;" mat-dialog-title>Candidate Details</h1>
+    <button style="float:right" mat-raised-button (click)="goBack()" color="primary">Go Back</button>
+  </div>
+  <div class="center">
+    <div class="center" mat-dialog-content>
+      <div style="display:inline-flex">
+        <h4 style="width:120px">Name:</h4>
+        <mat-form-field class="details">
+          <input matInput [(ngModel)]="name" disabled>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="center" *ngIf="data" mat-dialog-content>
+      <div style="display:inline-flex">
+        <h4 style="width:120px">Location:</h4>
+        <mat-form-field class="details">
+          <input matInput [(ngModel)]="data.location" disabled>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="center" *ngIf="data" mat-dialog-content>
+      <div style="display:inline-flex">
+        <h4 style="width:120px">Current Salary:</h4>
+        <mat-form-field class="details">
+          <input matInput [(ngModel)]="data.salary" disabled>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="center" *ngIf="data" mat-dialog-content>
+      <div style="display:inline-flex">
+        <h4 style="width:120px">Notice Period:</h4>
+        <mat-form-field class="details">
+          <input matInput [(ngModel)]="noticePeriod" disabled>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="center" *ngIf="data" mat-dialog-content>
+      <div style="display:inline-flex">
+        <h4 style="width:120px">Experience:</h4>
+        <mat-form-field class="details">
+          <input matInput [(ngModel)]="data.exp" disabled>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="chartContainer" style="width: 40%; height: 150px;padding-top: 30px"></div> -->
+  <div>
+    <app-candidate-score-bar></app-candidate-score-bar>
+  </div>
+</div>
+<div id="chartContainer"></div>
