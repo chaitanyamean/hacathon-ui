@@ -43,6 +43,7 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
       {path: 'login', component: LoginComponent},
       {path: 'user-quiz/:id', loadChildren: './user-module/user-module.module#UserModuleModule'},
       {path: 'HrDashboard', loadChildren: './hr/hr-module#HrModule'},
+      {path: 'HrComponent', loadChildren: './hr/hr-module/hr.module#HrModule'},
       { path: '**', redirectTo: '' }
     ])
   ],
