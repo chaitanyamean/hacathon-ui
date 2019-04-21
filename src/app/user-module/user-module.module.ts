@@ -6,12 +6,9 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatAutocompleteModule, MatRadioModule, MatCardModule,
   MatButtonModule, MatFormFieldModule,MatSelectModule,MatInputModule} from  '@angular/material';
- import { UserServiceService } from './user-service.service';
-<<<<<<< HEAD
+import { UserServiceService } from './user-service.service';
 import { UserExamComponent } from './user-exam/user-exam.component';
-=======
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
->>>>>>> 78400c0a34e9f878fb87c9fca865d65fcb7baf60
 
  const routes: Routes = [
   { path: 'user-dashboard',  component: UserDashboardComponent },
@@ -31,20 +28,10 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     MatRadioModule,
     MatButtonModule,
     NgMultiSelectDropDownModule.forRoot(),
-<<<<<<< HEAD
-    RouterModule.forChild([
-      {path: 'employeeHome', component: UserDataComponent},
-      {path: 'quiz', component: UserExamComponent}
-    ])
-  ],
-  exports: [UserDataComponent],
-  declarations: [UserDataComponent, UserExamComponent],
-=======
     RouterModule.forChild(routes)
   ],
   exports: [UserDataComponent],
-  declarations: [UserDataComponent, UserDashboardComponent],
->>>>>>> 78400c0a34e9f878fb87c9fca865d65fcb7baf60
+  declarations: [UserDataComponent,UserDashboardComponent, UserExamComponent],
   providers: [UserServiceService]
 
 })
