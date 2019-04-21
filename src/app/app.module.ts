@@ -36,10 +36,12 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     HrRoutingModule,
     CustomMaterialModule,
     HttpClientModule,
+    UserModuleModule,
     RouterModule.forRoot([
       {path: '', redirectTo: '/login', pathMatch:'full'},
       {path: 'signup', component: SignUpComponent},
       {path: 'login', component: LoginComponent},
+      {path: 'employeeHome', loadChildren: './user-module/user-module.module#UserModuleModule'},
       { path: '**', redirectTo: '' }
     ])
   ],

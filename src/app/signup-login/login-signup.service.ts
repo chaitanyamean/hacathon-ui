@@ -12,20 +12,8 @@ export class LoginSignupService {
 private signup = ' https://blooming-escarpment-58887.herokuapp.com/user/signup';
 
   public login(loginDetails) {
-
     const response = this.httpClient.post(`${this.loginUrl}`, loginDetails);
-    return response;   
-     //  return this.httpClient.post<any>(this.loginUrl, loginDetails)
-      // .subscribe(user => {
-      //   // login successful if there's a jwt token in the response
-      //   if (user && user.token) {
-      //     // store user details and jwt token in local storage to keep user logged in between page refreshes
-      //     localStorage.setItem('currentUser', JSON.stringify(user));
-      //   }
-
-      //   return user;
-      // });
-
+    return response;
   }
 
   public logout() {
