@@ -90,7 +90,7 @@
 
       </mat-card-header>
       <mat-card-actions class="btn-class">
-        <button mat-raised-button color="accent">Take Exam</button>
+        <button mat-raised-button color="accent" (click)="takeExam(item.itemId)">Take Exam</button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>
@@ -99,3 +99,49 @@
 
 
 <div id="chartContainer" style="width: 100%; height: 400px;"></div>
+
+
+<!-- <h3 style="text-align: center">Carrer Guidance</h3> -->
+  <!-- <p style="text-align: center">Right guidance at the right time</p> -->
+
+  <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <!-- <mat-card-title>Shiba Inu</mat-card-title> -->
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+          </mat-card-header>
+          <img mat-card-image src="../../../assets/carrer.jpg" alt="Photo of a Shiba Inu">
+
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <!-- <h3>Be on spot light</h3> -->
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title class="know-class">Carrer Guidance</mat-card-title>
+          <mat-card-subtitle class="sub-class">Right guidance at the right time </mat-card-subtitle>
+          <br>
+          <!-- <mat-card-actions>
+            <button mat-flat-button color="accent" (click)="onClickFill()">Fill Details</button>
+          </mat-card-actions> -->
+        </mat-card-header>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title class="know-class">Mock Interview</mat-card-title>
+          <mat-card-subtitle class="sub-class">We take care and improve your confidence </mat-card-subtitle>
+        </mat-card-header>
+      </mat-grid-tile>
+      <mat-grid-tile>
+
+        <mat-card class="example-card">
+          <mat-card-header>
+          </mat-card-header>
+          <img mat-card-image src="../../../assets/interview.png" alt="Photo of a Shiba Inu">
+
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>

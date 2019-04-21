@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   public login() {
     this.loading = true;
     this.loginSignupService.login(this.loginDetails).subscribe(
-        data => {
-          let resObj: any = data
+      data => {
+        let resObj: any = data
         //  login successful if there's a jwt token in the response
         if (resObj && resObj.token) {
           // window.alert("login successfull");
@@ -42,17 +42,18 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userId', resObj.result.userId);
 
         }
-          if (!resObj.result.isUser) {
-            this.router.navigate(['/hr']);
-          } else {
-            this.router.navigate(['/user-dashboard']);
-            // return data;
-          }
-        },
-        error => {
-          window.alert(error);
-          this.loading = false;
-        });
+        if (!resObj.result.isUser) {
+          this.router.navigate(['/Candidates']);
+        }
+        else {
+          this.router.navigate([this.returnUrl]);
+          return data;
+        }
+      },
+      error => {
+        window.alert(error);
+        this.loading = false;
+      });
   }
 
 }

@@ -31,6 +31,14 @@ export class UserServiceService {
 
    return response;
  }
+//  get-score/:id
+
+ public getScore(userId){
+  const response =
+  this.httpClient.get(this.url + '/common/get-score/' + userId, this.httpOptions);
+
+  return response;
+}
 
  public setUserDetails(userDetails) {
   const response = this.httpClient.post(this.setUserDetailsApi, userDetails, this.httpOptions);
@@ -65,6 +73,5 @@ export class UserServiceService {
   this.httpClient.post(this.setUserScoreApi, userScore, this.httpOptions);
   return response;
 }
-
 
 }

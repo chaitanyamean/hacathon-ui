@@ -34,6 +34,7 @@ this.userId = localStorage.getItem('userId');
 
   ngOnInit() {
     this.getUserDetails();
+    this.getScore();
 
     var chart = new CanvasJS.Chart("chartContainer", {
       animationEnabled: true,
@@ -76,5 +77,16 @@ this.userId = localStorage.getItem('userId');
         console.log(this.detailsRes.data.skillSet);
       }
     });
+  }
+
+  takeExam(itemId) {
+    this.router.navigate(['/user-quiz', itemId]);
+  }
+
+  getScore() {
+    this.userService.getScore(this.userId).subscribe(data => {
+      console.log(data);
+
+    })
   }
 }

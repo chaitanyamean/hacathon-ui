@@ -36,7 +36,7 @@
   <!-- skillset -->
   <h4 class="lab-class">Skills</h4>
 
-  <ng-multiselect-dropdown [placeholder]="'Add your skillsets'" [data]="dropdownList" [(ngModel)]="userJobDetails.skillSet"
+  <ng-multiselect-dropdown [placeholder]="'Add your skillsets'" [(ngModel)]="userJobDetails.skillset" [data]="dropdownList"
     [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
   </ng-multiselect-dropdown>
 
@@ -44,17 +44,12 @@
   <h4>Location</h4>
   <mat-form-field class="example-full-width">
     <mat-label>Location</mat-label>
-    <!-- <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [(ngModel)]="userJobDetails.location" (optionSelected)="onLocationChanged($event)">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option}}
       </mat-option>
-    </mat-autocomplete> -->
-    <mat-select [(ngModel)]='userJobDetails.location' (selectionChange)='onLocationChanged($event)'>
-        <mat-option *ngFor="let option of options" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-select>
+    </mat-autocomplete>
   </mat-form-field>
 
   <!-- experience -->
@@ -86,15 +81,13 @@
     </mat-form-field>
   </form>
 
-  <mat-radio-group aria-label="Select an option" [(ngModel)]="userJobDetails.isActivelyLookingforJob">
-      <mat-radio-button class="example-radio-button" *ngFor="let jobs of lookingForJobs" [value]="jobs.value">
-          {{jobs.job}}
-        </mat-radio-button>  </mat-radio-group>
-        <!-- <div>Your favorite season is: {{userJobDetails.isActivelyLookingforJob}}</div> -->
-
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button [checked]="userJobDetails.isActivelyLookingforJob" value="true">Immediately looking for jobs</mat-radio-button>
+    <mat-radio-button [checked]="!userJobDetails.isActivelyLookingforJob" value="false">Open for job opportunities</mat-radio-button>
+  </mat-radio-group>
 <div style="margin-top: 35px;">
     <mat-card-actions>
-      <button mat-raised-button (click)="submit()" color="primary">{{actionBtn}}</button>
+      <button mat-raised-button (click)="submit()" color="primary">Submit</button>
     </mat-card-actions>
     </div>
 </div>

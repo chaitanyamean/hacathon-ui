@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../user-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-exam',
@@ -9,8 +10,8 @@ import { UserServiceService } from '../user-service.service';
 export class UserExamComponent implements OnInit {
   public userScoreDetails = {
         score: 0,
-        skill: '', 
-        skillId: '', 
+        skill: '',
+        skillId: '',
         userId: ''
   }
   public questions: any[] = [];
@@ -21,11 +22,14 @@ export class UserExamComponent implements OnInit {
   public selectedAnswer_3: number;
   public selectedAnswer_4: number;
   public selectedAnswer_5: number;
-  constructor(private userService: UserServiceService) { }
+  constructor(private userService: UserServiceService,private router: Router, private route: ActivatedRoute) {
+
+    this.userScoreDetails.userId = this.route.snapshot.params['id']
+   }
 
   ngOnInit() {
-    this.userScoreDetails.userId = this.userId;
-    this.userService.getQuestions(this.userId).subscribe(
+    // this.userScoreDetails.userId = this.userId;
+    this.userService.getQuestions(this.userScoreDetails.userId).subscribe(
       result => {
         let questionsData:any = result;
         this.questions = questionsData.data;
@@ -50,10 +54,16 @@ export class UserExamComponent implements OnInit {
     if(this.selectedAnswer_5 == this.questions[4].correctAnswer){
       this.totalQuizScore =+ 1;
     }
-    
+
     this.userScoreDetails.score = this.totalQuizScore;
     this.userService.setUserScore(this.userScoreDetails).subscribe(
-      result => result
+      result => {
+        const resultRes: any = result;
+
+        if (resultRes.status === 200) {
+          this.router.navigate(['/user-dashboard']);
+        }
+      }
     );
   }
 

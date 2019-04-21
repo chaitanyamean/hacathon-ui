@@ -13,7 +13,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
  const routes: Routes = [
   { path: 'user-dashboard',  component: UserDashboardComponent },
-  {path: 'user-details', component: UserDataComponent}
+  {path: 'user-details', component: UserDataComponent},
+  { path: 'user-quiz/:id', component: UserExamComponent}
 ];
 
 @NgModule({
@@ -34,7 +35,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     RouterModule.forChild(routes)
   ],
   exports: [UserDataComponent],
-  declarations: [UserDataComponent, UserDashboardComponent,UserExamComponent],
+  declarations: [UserDataComponent, UserDashboardComponent, UserExamComponent],
   providers: [UserServiceService]
 
 })

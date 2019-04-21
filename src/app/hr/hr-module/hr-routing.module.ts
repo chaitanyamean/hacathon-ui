@@ -1,7 +1,6 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { HrComponent } from './hr.component';
+import { HrComponent } from '../hr-dashboard/hr-dashboard.component';
 
 const routes: Routes = [
   { path: 'hr',  component: HrComponent }
