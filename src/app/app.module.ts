@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CustomMaterialModule} from './custom-material/custom-material.module';
 import {HttpClientModule} from '@angular/common/http';;
 import { LoginSignupService } from './signup-login/login-signup.service';
-import { ChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { AdminModuleModule } from './admin-module/admin-module.module';
@@ -32,13 +32,13 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     AdminModuleModule,
     UserModuleModule,
     HrModule,
-    ChartsModule,
+    // ChartsModule,
     HrRoutingModule,
     CustomMaterialModule,
     HttpClientModule,
     UserModuleModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: '/login', pathMatch:'full'},
+      {path: '', redirectTo: '/login', pathMatch: 'full'},
       {path: 'signup', component: SignUpComponent},
       {path: 'login', component: LoginComponent},
       {path: 'employeeHome', loadChildren: './user-module/user-module.module#UserModuleModule'},
