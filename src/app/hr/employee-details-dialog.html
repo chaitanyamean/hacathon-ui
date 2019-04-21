@@ -50,18 +50,9 @@
 
     <div mat-dialog-content>
         <div style="display:inline-flex">
-            <h4 style="width:120px">Designation:</h4>
-            <mat-form-field class="details">
-                    <input matInput [(ngModel)]="designation" disabled>
-            </mat-form-field>
-        </div>
-    </div>
-
-    <div mat-dialog-content>
-        <div style="display:inline-flex">
             <h4 style="width:120px">Email ID:</h4>
             <mat-form-field class="details">
-                    <input matInput [(ngModel)]="emailId" disabled>
+                    <input matInput [(ngModel)]="data.emailId" disabled>
             </mat-form-field>
         </div>
     </div>
@@ -70,7 +61,7 @@
         <div style="display:inline-flex">
             <h4 style="width:120px">Expected Salary:</h4>
             <mat-form-field class="details">
-                    <input matInput [(ngModel)]="expectedSalary" disabled>
+                    <input matInput [(ngModel)]="data.expectedSalary" disabled>
             </mat-form-field>
         </div>
     </div>
@@ -79,9 +70,20 @@
         <div style="display:inline-flex">
             <h4 style="width:120px">Notice Period:</h4>
             <mat-form-field class="details">
-                    <input matInput [(ngModel)]="noticePeriod" disabled>
+                    <input matInput [(ngModel)]="data.noticePeriod" disabled>
             </mat-form-field>
         </div>
+    </div>
+
+    <div>
+            <div style="display: block"> <!-- add this div -->
+                <canvas baseChart
+                        [data]="pieChartData"
+                        [labels]="pieChartLabels"
+                        [chartType]="pieChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+              </div>
     </div>
 
     <div mat-dialog-actions style="float:right">
