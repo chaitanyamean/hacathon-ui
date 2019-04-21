@@ -8,6 +8,7 @@ import {MatAutocompleteModule, MatRadioModule, MatCardModule,
   MatButtonModule, MatFormFieldModule,MatSelectModule,MatInputModule} from  '@angular/material';
  import { UserServiceService } from './user-service.service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
  const routes: Routes = [
   { path: 'user-dashboard',  component: UserDashboardComponent },
@@ -26,6 +27,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     MatCardModule,
     MatRadioModule,
     MatButtonModule,
+    MatGridListModule,
     NgMultiSelectDropDownModule.forRoot(),
     RouterModule.forChild(routes)
   ],
